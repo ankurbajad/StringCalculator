@@ -46,4 +46,8 @@ class TestStringCalculator < Minitest::Test
     assert_equal 3, StringCalculator.add("//;\n1;2")
   end
 
+  def test_raises_exception_for_negative_numbers
+    assert_raises(RuntimeError) { StringCalculator.add("2,-3") }
+  end
+
 end
