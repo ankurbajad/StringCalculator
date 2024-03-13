@@ -21,4 +21,8 @@ class TestStringCalculator < Minitest::Test
     assert_equal 6, StringCalculator.add("1,2,3")
   end
 
+  def test_handles_new_lines_between_numbers_and_commas
+    assert_equal 6, StringCalculator.add("1\n2,3")
+  end
+
 end
