@@ -50,4 +50,9 @@ class TestStringCalculator < Minitest::Test
     assert_raises(RuntimeError) { StringCalculator.add("2,-3") }
   end
 
+  def test_exception_message_includes_all_negative_numbers
+    error = assert_raises(RuntimeError) { StringCalculator.add("-1,2,-3,-4") }
+    assert_equal "Negative numbers not allowed: -1, -3, -4", error.message
+  end
+
 end
