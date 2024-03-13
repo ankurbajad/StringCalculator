@@ -1,5 +1,12 @@
 require 'minitest/autorun'
 
+class StringCalculator
+  def self.add(numbers)
+    return 0 if numbers.empty?
+    numbers.split(',').map(&:to_i).sum
+  end
+end
+
 class TestStringCalculator < Minitest::Test
 
   def test_returns_0_for_an_empty_string
